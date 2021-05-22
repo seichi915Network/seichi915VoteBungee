@@ -1,5 +1,5 @@
 ThisBuild / scalaVersion := "2.13.5"
-ThisBuild / version := "1.0.0"
+ThisBuild / version := "1.0.1"
 ThisBuild / description := "seichi915Network Votifier"
 
 resolvers ++= Seq(
