@@ -9,7 +9,6 @@ import net.seichi915.seichi915vote.logger.VoteHistoryLogger
 import org.bukkit.Bukkit
 import org.bukkit.event.{EventHandler, Listener}
 
-import java.sql.Timestamp
 import scala.concurrent.ExecutionContext
 
 class VoteListener extends Listener {
@@ -51,10 +50,7 @@ class VoteListener extends Listener {
       Bukkit.getServer.dispatchCommand(
         Bukkit.getServer.getConsoleSender,
         command
-          .replaceAll(
-            "TIME",
-            new Timestamp(event.getVoteData.getTimeStamp.toLong * 1000).toString
-          )
+          .replaceAll("TIME", event.getVoteData.getTimeStamp)
           .replaceAll("NAME", event.getVoteData.getUsername)
           .replaceAll("SERVICE", event.getVoteData.getServiceName)
           .replaceAll("ADDRESS", event.getVoteData.getAddress)
