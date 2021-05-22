@@ -1,0 +1,64 @@
+name: Seichi915Vote
+version: 1.0.0
+main: net.seichi915.seichi915vote.Seichi915Vote
+api-version: "1.13"
+load: POSTWORLD
+authors: [stouma915]
+description: "seichi915Network Votifier"
+website: https://www.seichi915.net
+depend:
+  - Votifier
+commands:
+  purgevotehistory:
+    description: Purge vote history
+    usage: /purgevotehistory
+    permission: seichi915vote.command.purgevotehistory
+    permission-message: "§c権限が不足しています。"
+  votebonus:
+    description: Get vote bonus
+    usage: /votebonus
+    permission: seichi915vote.command.votebonus
+    permission-message: "§c権限が不足しています。"
+  addvotebonus:
+    description: Add vote bonus
+    usage: /addvotebonus <Name> <Amount>
+    permission: seichi915vote.command.addvotebonus
+    permission-message: "§c権限が不足しています。"
+  setvotebonusamount:
+    description: Set vote bonus amount
+    usage: /setvotebonusamount <Name> <Amount>
+    permission: seichi915vote.command.setvotebonusamount
+    permission-message: "§c権限が不足しています。"
+  deletevotebonus:
+    description: Delete vote bonus
+    usage: /deletevotebonus <Name>
+    permission: seichi915vote.command.deletevotebonus
+    permission-message: "§c権限が不足しています。"
+permissions:
+  seichi915vote.*:
+    description: Grant all permissions of seichi915Vote
+    children:
+      seichi915vote.command.*: true
+  seichi915vote.command.*:
+    description: Grant all command permissions of seichi915Vote
+    children:
+      seichi915vote.command.purgevotehistory: true
+      seichi915vote.command.votebonus: true
+      seichi915vote.command.addvotebonus: true
+      seichi915vote.command.setvotebonusamount: true
+      seichi915vote.command.deletevotebonus: true
+  seichi915vote.command.purgevotehistory:
+    description: Permission to use /purgevotehistory
+    default: op
+  seichi915vote.command.votebonus:
+    description: Permission to use /votebonus
+    default: true
+  seichi915vote.command.addvotebonus:
+    description: Permission to use /addvotebonus
+    default: op
+  seichi915vote.command.setvotebonusamount:
+    description: Permission to use /setvotebonusamount
+    default: op
+  seichi915vote.command.deletevotebonus:
+    description: Permission to use /deletevotebonus
+    default: op

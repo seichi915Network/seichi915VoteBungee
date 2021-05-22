@@ -1,0 +1,3 @@
+CommandsToRun:
+  - "tellraw @a \"[TIME] NAME さんが SERVICE から投票しました。\""
+EnableGUI: true
